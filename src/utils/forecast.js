@@ -1,8 +1,9 @@
 const  request = require('postman-request')
 
 
-const forecast = (latitude, longtitude, callback) => {
-    const url = 'http://api.weatherstack.com/current?access_key=2ad55cc485fb95f3567ebcd237386275&query=' + latitude + ',' + longtitude + '&units=m'
+const forecast = (latitude, longitude, callback) => {
+    const url = 'http://api.weatherstack.com/current?access_key=2ad55cc485fb95f3567ebcd237386275&query=' + latitude + ',' + longitude
+    
     request({url, json: true}, (error, { body}) => {
         if(error) {
             callback('Unable to connect to weather services', undefined)
